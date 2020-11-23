@@ -41,5 +41,14 @@ pizzaJson.map((pizza, index) => {
   query('.pizza-area').append(pizzaItem);
 });
 
+function closeModal(){
+  query('.pizzaWindowArea').style.opacity= 0;
+  setTimeout(() => {
+    query('.pizzaWindowArea').style.display= 'none';
+  }, 500)
+}
 
+queryAll('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item) => {
+  item.addEventListener('click', closeModal);
+});
 
