@@ -17,7 +17,10 @@ pizzaJson.map((pizza, index) => {
     query('.pizzaInfo h1').innerHTML = pizzaJson[key].name
     query('.pizzaInfo--desc').innerHTML = pizzaJson[key].description
     query('.pizzaBig img').src = pizzaJson[key].img
-    query('.pizzaInfo h1').innerHTML = pizzaJson[key].name
+    query('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`
+    queryAll('.pizzaInfo--size').forEach((size, sizeIndex) => {
+      size.querySelector('span').innerHTML = pizzaJson[key].sizes[sizeIndex];
+    })
 
     
     query('.pizzaWindowArea').style.opacity=0;
